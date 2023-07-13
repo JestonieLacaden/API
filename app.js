@@ -7,7 +7,11 @@ app.use(cors({
     origin: ['http://localhost:3000']
 }))
 
-const lists = []
+const lists = [{ name: "Jestonie" }]
+
+app.get("/", (req, res) => {
+    res.json({ message: "Edi meow" })
+})
 
 app.get('/lists', function (req, res) {
     res.json(lists)
@@ -19,7 +23,7 @@ app.post('/lists', (req, res) => {
     res.json(lists)
 })
 
-const port = 3001
+const port = 3002
 
 app.listen(port, () => {
     console.log('Listening port:', port)
